@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import TodoList from './TodoList'
+import TodoItems from './TodoItems'
+class App extends Component {
+	constructor() {
+    	super()
+    	this.state = {
+    		items: [
+    		{
+    			key: 1,
+    			text: "task item a"
+    		},
+    		{
+    			key: 2,
+    			text: "text item b"
+    		},
+    		{
+    			key: 3,
+    			text: "text item cc"
+    		}
+    		],
+    	}
+    }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    addItem = (taskName) => {
+    	const newTask = {
+    		text: taskName,
+    		key: Date.now()
+    	}
+    	if (taskName !== null && taskName !== '') {
+    		const items = [...this.state.items, newTask]
+    		this.setState({
+    			items,
+    		})
+    	}
+    }
+
+    render() {
+    	return (
+    		<div>
+    			<TodoList addItem={this.addItem} />
+    			<TodoItems entries={this.state.items} />
+    		</div>
+		)
+	}
 }
-
-export default App;
+export default App
