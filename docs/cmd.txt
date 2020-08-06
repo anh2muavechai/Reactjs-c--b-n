@@ -1,4 +1,7 @@
+//cài đặt create-react-app
 npm install
 npm install -g create-react-app
 create-react-app react-project
 npm start
+
+//sử dụng redux

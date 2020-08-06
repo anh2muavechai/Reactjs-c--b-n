@@ -1,63 +1,171 @@
+/* Basic Style */
+
 body {
-  padding: 50px;
-  background-color: #66CCFF;
-  font-family: sans-serif;
+	background: #fff;
+	color: #333;
+	font-family: Lato, sans-serif;
+	background-color:#e4e4e4;
 }
-#container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column-reverse;
+
+.container {
+	display: block;
+	width: 400px;
+	margin: 10px auto 100px;
+	background-color:#fff;
+	padding:0px 10px 10px 10px;
+	border-radius:10px
 }
-.todoListMain .header input {
-  padding: 10px;
-  font-size: 16px;
-  border: 2px solid#FFF;
-  width: 165px;
+
+h2 {
+	text-align:center;
+	padding-top:10px;
+	margin-bottom:0px;
 }
-.todoListMain .header button {
-  padding: 10px;
-  font-size: 16px;
-  margin: 10px;
-  margin-right: 0px;
-  background-color: #0066FF;
-  color: #FFF;
-  border: 2px solid#0066FF;
+
+ul {
+	margin: 0;
+	padding: 0;
 }
-.todoListMain .header button:hover {
-  background-color: #003399;
-  border: 2px solid#003399;
-  cursor: pointer;
+
+li * {
+	float: left;
 }
-.todoListMain .theList {
-  list-style: none;
-  color: red;
-  padding-left: 0;
-  width: 250px;
+
+li,
+h3 {
+	clear: both;
+	list-style: none;
 }
-.todoListMain .theList li {
-  color: #333;
-  background-color: rgba(255, 255, 255, .5);
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  list-style: none;
+
+input,
+button {
+	outline: none;
 }
-ul.theList {
-  padding: 0;
-  list-style: none;
-  display: inline-flex;
-  justify-content: center;
-  flex-direction: column-reverse;
+
+button {
+	background: none;
+	border: 0px;
+	color: #888;
+	font-size: 15px;
+	width: 55px;
+	margin: 10px 0 0;
+	font-family: Lato, sans-serif;
+	cursor: pointer;
 }
-.theList li {
-  color: #333;
-  background-color: rgba(255, 255, 255, .5);
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  transition: background-color.2s ease-out;
+
+button:hover {
+	color: #333;
 }
-.todoListMain .theList li:hover {
-  background-color: pink;
-  cursor: pointer;
+
+
+/* Heading */
+
+h3,
+label[for='new-task'] {
+	color: #333;
+	font-weight: 700;
+	font-size: 15px;
+	border-bottom: 2px solid #333;
+	padding: 20px 0 10px;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+input[type="text"] {
+	margin: 0;
+	font-size: 18px;
+	line-height: 18px;
+	height: 18px;
+	padding: 10px;
+	border: 1px solid #ddd;
+	background: #fff;
+	border-radius: 6px;
+	font-family: Lato, sans-serif;
+	color: #888;
+}
+
+input[type="text"]:focus {
+	color: #333;
+}
+
+
+/* New Task */
+
+label[for='new-task'] {
+	display: block;
+	margin: 0 0 20px;
+}
+
+input#new-task {
+	float: left;
+	width: 318px;
+}
+
+p > button:hover {
+	color: #0FC57C;
+}
+
+
+/* Task list */
+
+li {
+	overflow: hidden;
+	padding: 20px 0;
+	border-bottom: 1px solid #eee;
+}
+
+li > input[type="checkbox"] {
+	margin: 0 10px;
+	position: relative;
+	top: 15px;
+}
+
+li > label {
+	font-size: 18px;
+	line-height: 40px;
+	width: 237px;
+	padding: 0 0 0 11px;
+}
+
+li > input[type="text"] {
+	width: 226px;
+}
+
+li > .delete:hover {
+	color: #CF2323;
+}
+
+
+/* Completed */
+
+#completed-tasks label {
+	text-decoration: line-through;
+	color: #888;
+}
+
+
+/* Edit Task */
+
+ul li input[type=text] {
+	display: none;
+}
+
+ul li.editMode input[type=text] {
+	display: block;
+}
+
+ul li.editMode label {
+	display: none;
+}
+
+.save, .cancel {
+	display: none;
+}
+
+li.editMode .save, li.editMode .cancel {
+	display: block;
+}
+
+li.editMode .edit, li.editMode .delete, li.editMode input[type=checkbox] {
+	display: none;
 }
